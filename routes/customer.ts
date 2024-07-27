@@ -81,6 +81,5 @@ router.get("/:id", async(req: Request, res: Response, next: NextFunction)=>{
     }
 })
 
-//postman worked only with this URL: `http://localhost:5000/customers/1` for (put, deete, get:id)
 
 export default router
