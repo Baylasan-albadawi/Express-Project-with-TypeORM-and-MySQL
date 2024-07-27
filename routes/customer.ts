@@ -67,10 +67,10 @@ router.put("/:id", async (req: Request, res: Response, next:NextFunction) =>{
 router.get("/:id", async(req: Request, res: Response, next: NextFunction)=>{
     const id =  Number(req.params.id)
     const payload:Customer= req.body
-
+    
     try {
         const customer = await getCustomer(id)
-
+        
         res.json({
             messege:"Here's the Customer you're looking for: ",
             customer: customer
@@ -81,5 +81,6 @@ router.get("/:id", async(req: Request, res: Response, next: NextFunction)=>{
     }
 })
 
+//postman worked only with this URL: `http://localhost:5000/customers/1` for (put, deete, get:id)
 
 export default router
