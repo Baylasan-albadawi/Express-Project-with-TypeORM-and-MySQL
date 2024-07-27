@@ -22,7 +22,7 @@ router.post("/",  async (req:Request, res:Response, next:NextFunction)=>{
 
         res.json({
             messege:"Customer created successfully",
-            success: true
+            customer: customer
         })
     } catch (error) {
         console.log("Error" + error);
