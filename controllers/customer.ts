@@ -12,13 +12,8 @@ const getAllCustomers= async (req: Request, res: Response) => {
 }
 
 const createCustomer= async (payload:Customer)=>{
-    const customer = await Customer.findOne({
-    where:[
-       {name: payload.name},
-       {mobilePhone: payload.mobilePhone},
-       {balance: payload.balance}
-    ]});
-    if(payload.mobilePhone){
+    const customer = await Customer.findOne({where:[{mobilePhone: payload.mobilePhone}]});
+    if(customer){
         throw new AppError("A customer with this mobile phone already exist! ", 409, true)
     }
     const newCustomer = Customer.create(payload)
