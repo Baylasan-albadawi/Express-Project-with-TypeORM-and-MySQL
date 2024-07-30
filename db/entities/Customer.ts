@@ -13,5 +13,5 @@ export class Customer extends BaseEntity{
 
     @Column({nullable: false})
     balance: number
-
+    
 }

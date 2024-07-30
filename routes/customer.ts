@@ -32,7 +32,7 @@ router.post("/",  async (req:Request, res:Response, next:NextFunction)=>{
 })
 
 router.delete("/:id", async (req:Request, res:Response, next:NextFunction)=>{
-    const id= await Number(req.params.id)
+    const id=  Number(req.params.id)
 
     try {
         const customer = await removeCustomer(id)
@@ -48,7 +48,7 @@ router.delete("/:id", async (req:Request, res:Response, next:NextFunction)=>{
 })
 
 router.put("/:id", async (req: Request, res: Response, next:NextFunction) =>{
-    const id = await Number(req.params.id)
+    const id =  Number(req.params.id)
     const payload: Customer = req.body
 
     try {
